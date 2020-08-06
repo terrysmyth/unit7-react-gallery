@@ -30,13 +30,16 @@ export class Provider extends Component {
         })
     } 
 
+     
+
 	render() {
 		return(
 			<ImagesContext.Provider value={{
 	          imgs: this.state.imgs,
 	          action: this.customSearch,
 	          search: this.state.search,
-            loading: this.state.loading
+            loading: this.state.loading,
+            handleSubmit: this.handleSubmit
 	        }}>
 	        	{this.props.children}
 	        </ImagesContext.Provider>

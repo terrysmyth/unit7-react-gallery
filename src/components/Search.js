@@ -15,13 +15,16 @@ const Search = ({ match }) => {
           		{ context => {
                 // Check search to stop Infinite Loop
                 if ( context.search !== search ) {
+                    context.loading = true;
                     context.action(search);
                 } 
 
                 // IF loading images.
                 if (context.loading) {
                   return (
-                    <p>Loading...</p>
+                    <React.Fragment>
+                        <img src="../loading.gif"/>
+                    </React.Fragment>
                     )
                 }
                 // IF API call made and results been added to array (0 or 1)

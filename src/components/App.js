@@ -4,7 +4,6 @@ import Search from './Search';
 import Form from './Form';
 import Nav from './Nav';
 
-
 import {
     BrowserRouter,
     Route,
@@ -13,7 +12,9 @@ import {
 } from 'react-router-dom';
 
 const App = () => { 
+
     
+
       return (
         
           <div className="container">
