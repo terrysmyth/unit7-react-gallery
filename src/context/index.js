@@ -9,7 +9,8 @@ const Api_Key = ApiKey;
 export class Provider extends Component {
 	state = {
       imgs: [],
-      search: ""
+      search: "",
+      loading: true
     }
     // I decided not to preload all 3 nav searches. Kept code dry with just the use of one GET.
     customSearch = (search) => {
@@ -20,7 +21,8 @@ export class Provider extends Component {
        		this.setState({
        			// Take the first 24 only after filter has removed bad images.
 	            imgs: list.slice(0, 24),
-	            search: search
+	            search: search,
+              loading: false
 	          })
        	})
         .catch( error => {
@@ -33,7 +35,8 @@ export class Provider extends Component {
 			<ImagesContext.Provider value={{
 	          imgs: this.state.imgs,
 	          action: this.customSearch,
-	          search: this.state.search
+	          search: this.state.search,
+            loading: this.state.loading
 	        }}>
 	        	{this.props.children}
 	        </ImagesContext.Provider>

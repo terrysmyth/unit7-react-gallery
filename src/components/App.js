@@ -5,7 +5,6 @@ import Form from './Form';
 import Nav from './Nav';
 
 
-
 import {
     BrowserRouter,
     Route,
@@ -13,12 +12,12 @@ import {
     Redirect
 } from 'react-router-dom';
 
-class App extends Component {
-
-    render() {
+const App = () => { 
+    
       return (
         
           <div className="container">
+
             <BrowserRouter>
 
               <Route path="/" component={Form} />
@@ -40,9 +39,9 @@ class App extends Component {
 
             
           </div>
+
         
       )
-    }
 }
 
 export default App;
